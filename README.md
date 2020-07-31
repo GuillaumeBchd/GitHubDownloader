@@ -5,9 +5,6 @@
 Follow this procedure to install the github downloader tool:
 - Clone this repository wherever you want
 - cd into GitHubDownloader
-- Create a python virtual environment with `python3 -m venv venv` (unix) or `python -m venv venv` (windows)
-- Activate the virtual environment with `source ./venv/bin/activate` (unix) or `.\venv\Scripts\activate` (windows)
-- Install the required libraries (contains flake8 and rope for development purposes) with `pip install -r requirements.txt`
 
 You're all ready to go !
 
