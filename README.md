@@ -15,6 +15,7 @@ You're all ready to go !
 
 To use this tool simply use :
 `source ./venv/bin/activate` (unix) or `.\venv\Scripts\activate` (windows)
+
 `python .../github_downloader your_args`
 
 Here's the help page that you can find with the -h or --help arg :
