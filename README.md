@@ -1,5 +1,7 @@
 # Github Downloader
 
+A simple tool to download file or directory from github repository via the github api.
+
 ## Installation
 
 Follow this procedure to install the github downloader tool:
