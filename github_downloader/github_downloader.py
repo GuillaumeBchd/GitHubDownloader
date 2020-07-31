@@ -10,8 +10,7 @@ class GitHubDownloader:
         self.branch = "master"
         self.github = Github()
 
-        usage = "python .../github_downloader [-h] [-t TOKEN] [-u USER] [-p PASSWORD] repository selection"
-        self.parser = argparse.ArgumentParser(description="download files or directory from github", usage=usage)
+        self.parser = argparse.ArgumentParser(description="download files or directory from github", prog="github_downloader.py")
         self.parser_configuration()
 
         self.args = self.parser.parse_args()

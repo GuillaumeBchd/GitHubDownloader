@@ -19,7 +19,8 @@ To use this tool simply use :
 
 Here's the help page that you can find with the -h or --help arg :
 ```
-python .../github_downloader [-h] [-t TOKEN] [-u USER] [-p PASSWORD] repository selection
+github_downloader.py [-h] [-b BRANCH] [-t TOKEN] [-u USER] [-p PASSWORD]
+                            repository selection
 
 download files or directory from github
 
@@ -29,6 +30,8 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  -b BRANCH, --branch BRANCH
+                        branch to download the file/directory from
   -t TOKEN, --token TOKEN
                         token to use to download the file/directory
   -u USER, --user USER  user to use to download the file/directory
