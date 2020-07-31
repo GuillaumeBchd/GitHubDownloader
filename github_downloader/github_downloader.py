@@ -7,6 +7,7 @@ class GitHubDownloader:
     def __init__(self):
         self.repository = None
         self.selection = None
+        self.branch = "master"
         self.github = Github()
 
         usage = "python .../github_downloader [-h] [-t TOKEN] [-u USER] [-p PASSWORD] repository selection"
@@ -27,6 +28,8 @@ class GitHubDownloader:
         # TODO: add output
         # self.parser.parser.add_argument("-o", "--output")
 
+        self.parser.add_argument("-b", "--branch", type=str, help="branch to download the file/directory from")
+
         self.parser.add_argument("-t", "--token", type=str, help="token to use to download the file/directory")
         self.parser.add_argument("-u", "--user", type=str, help="user to use to download the file/directory")
         self.parser.add_argument("-p", "--password", type=str, help="password to use to download the file/directory")
@@ -45,6 +48,9 @@ class GitHubDownloader:
     def parser_parse(self):
         self.repository = self.args.repository
         self.selection = self.args.selection
+
+        if self.args.branch is not None:
+            self.branch = self.args.branch
 
         if self.args.token is not None:
             self.github = Github(self.args.token)
@@ -103,7 +109,7 @@ class GitHubDownloader:
             exit(1)
 
         # Get the file or directory
-        file_or_dir = self.github_repo.get_contents(self.selection)
+        file_or_dir = self.github_repo.get_contents(self.selection, ref=self.branch)
 
         # Selection is file or directory
         if isinstance(file_or_dir, ContentFile.ContentFile):
