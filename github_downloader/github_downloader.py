@@ -54,7 +54,10 @@ class GitHubDownloader:
         path_split = path.split('/')
         for iterator in range(1, len(path_split)):
             to_create = '/'.join(path_split[:iterator])
-            os.mkdir(to_create)
+            try:
+                os.mkdir(to_create)
+            except Exception:
+                pass
 
     def get_tree(self, sha):
         header = None
