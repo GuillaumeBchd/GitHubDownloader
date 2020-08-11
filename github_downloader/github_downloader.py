@@ -101,11 +101,16 @@ class GitHubDownloader:
         self.write_file(path, content)
 
     def run(self):
-        selection_split = self.selection.split('/')
+        if self.selection == ".":
+            elem_sha = self.branch
+            elem_type = "tree"
+        
+        else:
+            selection_split = self.selection.split('/')
 
-        elem_sha = self.branch
-        for elem in selection_split:
-            elem_sha, elem_type = self.get_sha(self.get_tree(elem_sha), elem)
+            elem_sha = self.branch
+            for elem in selection_split:
+                elem_sha, elem_type = self.get_sha(self.get_tree(elem_sha), elem)
 
         if elem_type == "blob":
             self.download(elem_sha, self.selection)
