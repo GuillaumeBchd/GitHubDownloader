@@ -23,6 +23,8 @@ You're all ready to go !
 
 ## Usage
 
+You can use this tool by typing this command `python3 .../github_downloader.py your_args`
+
 If you've followed the linux system installation guide you can use it directly with `github_downloader.py your_args`
 
 Here's the help page that you can find with the -h or --help arg :
